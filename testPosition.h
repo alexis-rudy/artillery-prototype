@@ -430,7 +430,22 @@ private:
     *********************************************/
    void setPixelsX_noZoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+		   // setup
+	   Position p;
+	   p.x = 999.9;
+	   p.y = 888.8;
+	   p.metersFromPixels = 1.0;
+	   double pix = 123.4;
+
+	   
+		   // exercise
+	   p.setPixelsX(pix);
+	   
+		   // verify
+	   assertEquals(pix, 123.4);
+	   assertEquals(p.metersFromPixels, 1.0);
+	   assertEquals(p.x, 123.4);
+	   assertEquals(p.y, 888.8);
    }
 
    /*********************************************
@@ -441,7 +456,22 @@ private:
     *********************************************/
    void setPixelsX_zoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+		   // setup
+	   Position p;
+	   p.x = 999.9;
+	   p.y = 888.8;
+	   p.metersFromPixels = 100.0;
+	   double pix = 123.4;
+	   
+	   
+		   // exercise
+	   p.setPixelsX(pix);
+	   
+		   // verify
+	   assertEquals(pix, 123.4);
+	   assertEquals(p.metersFromPixels, 100.0);
+	   assertEquals(p.x, 12340.0);
+	   assertEquals(p.y, 888.8);
    }
    
    /*********************************************
@@ -451,7 +481,22 @@ private:
     *********************************************/
    void setPixelsY_noZoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+		   // setup
+	   Position p;
+	   p.x = 999.9;
+	   p.y = 888.8;
+	   p.metersFromPixels = 1.0;
+	   double pix = 123.4;
+	   
+	   
+		   // exercise
+	   p.setPixelsY(pix);
+	   
+		   // verify
+	   assertEquals(pix, 123.4);
+	   assertEquals(p.metersFromPixels, 1.0);
+	   assertEquals(p.x, 999.9);
+	   assertEquals(p.y, 123.4);
    }
 
    /*********************************************
@@ -461,7 +506,22 @@ private:
     *********************************************/
    void setPixelsY_zoom()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+		   // setup
+	   Position p;
+	   p.x = 999.9;
+	   p.y = 888.8;
+	   p.metersFromPixels = 100.0;
+	   double pix = 123.4;
+	   
+	   
+		   // exercise
+	   p.setPixelsY(pix);
+	   
+		   // verify
+	   assertEquals(pix, 123.4);
+	   assertEquals(p.metersFromPixels, 100.0);
+	   assertEquals(p.x, 999.9);
+	   assertEquals(p.y, 12340.0);
    }
 
    /*********************************************
