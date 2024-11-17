@@ -63,7 +63,6 @@ class Position
 	void addPixelsX(double dxPixels)      { setPixelsX(getPixelsX() + dxPixels);     }
 	void addPixelsY(double dyPixels)      { setPixelsY(getPixelsY() + dyPixels);     }
 	void add(const Acceleration& a, const Velocity& v, double t);
-	void reverse() { }
 	
 	
 	private:
