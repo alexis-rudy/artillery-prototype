@@ -67,6 +67,12 @@ void Velocity::set(const Angle & angle, double magnitude)
 	this->dy = magnitude * cos(angle.getRadians());
 }
 
+void Velocity::reverse()
+{
+	this->dx = dx * -1;
+	this->dy = dy * -1;
+}
+
 
 /************************************************
  * Velocity :: GET ANGLE
