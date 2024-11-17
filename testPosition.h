@@ -188,7 +188,17 @@ private:
     *********************************************/
    void getZoom_member()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // setup
+	   Position p;
+	   p.metersFromPixels = 123.4;
+	   double pix = -99.9;
+	   
+	   // exercise
+	   pix = p.getZoom();
+	   
+	   // verify
+	   assertEquals(pix, 123.4);
+	   assertEquals(p.metersFromPixels, 123.4);
    }
    
    /*********************************************
@@ -201,7 +211,18 @@ private:
     *********************************************/
    void getZoom_anotherVariable()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+		   // setup
+	   Position p;
+	   p.metersFromPixels = 99.9;
+	   Position p2;
+	   p2.metersFromPixels = 123.4;
+	   
+		   // exercise
+	   p.metersFromPixels = p2.getZoom();
+	   
+		   // verify
+	   assertEquals(p.metersFromPixels, 123.4);
+	   assertEquals(p2.metersFromPixels, 123.4);
    }
 
 
