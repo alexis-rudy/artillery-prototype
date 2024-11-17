@@ -73,6 +73,12 @@ void Velocity::reverse()
 	this->dy = dy * -1;
 }
 
+void Velocity::addV(const Velocity & rhs)
+{
+	this->dx += rhs.getDX();
+	this->dy += rhs.getDY();
+}
+
 
 /************************************************
  * Velocity :: GET ANGLE

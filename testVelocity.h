@@ -774,7 +774,23 @@ private:
     *********************************************/
    void addV_stationary()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+      // setup
+	   Velocity v;
+	   v.dx = 0.0;
+	   v.dy = 0.0;
+	   Velocity rhs;
+	   rhs.dx = 2.3;
+	   rhs.dy = 4.5;
+	   
+	   // exercise
+	   v.addV(rhs);
+	   
+	   // verify
+	   assertEquals(v.dx, 2.3);
+	   assertEquals(v.dy, 4.5);
+	   assertEquals(rhs.dx, 2.3);
+	   assertEquals(rhs.dy, 4.5);
+	   
    }
 
    /*********************************************
@@ -784,7 +800,23 @@ private:
     *********************************************/
    void addV_nothing()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+		   // setup
+	   Velocity v;
+	   v.dx = 2.3;
+	   v.dy = 4.5;
+	   Velocity rhs;
+	   rhs.dx = 0.0;
+	   rhs.dy = 0.0;
+	   
+		   // exercise
+	   v.addV(rhs);
+	   
+		   // verify
+	   assertEquals(v.dx, 2.3);
+	   assertEquals(v.dy, 4.5);
+	   assertEquals(rhs.dx, 0.0);
+	   assertEquals(rhs.dy, 0.0);
+	   
    }
 
    /*********************************************
@@ -794,7 +826,23 @@ private:
     *********************************************/
    void addV_moving()
    {
-      assertUnit(NOT_YET_IMPLEMENTED);
+		   // setup
+	   Velocity v;
+	   v.dx = 2.3;
+	   v.dy = 4.5;
+	   Velocity rhs;
+	   rhs.dx = 100.0;
+	   rhs.dy = 200.0;
+	   
+		   // exercise
+	   v.addV(rhs);
+	   
+		   // verify
+	   assertEquals(v.dx, 102.3);
+	   assertEquals(v.dy, 204.5);
+	   assertEquals(rhs.dx, 100.0);
+	   assertEquals(rhs.dy, 200.0);
+	   
    }
 
 };
