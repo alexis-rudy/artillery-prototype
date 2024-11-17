@@ -2,7 +2,7 @@
  * Source File:
  *    VELOCITY
  * Author:
- *    <your name here>
+ *    Alexis Rudy
  * Summary:
  *    Everything we need to know about speed
  ************************************************************************/ 
@@ -20,6 +20,11 @@
  *********************************************/
 void Velocity::add(const Acceleration& acceleration, double time)
 {
+	dx = getDX();
+	dy = getDY();
+	
+	this->dx += acceleration.getDDX() * time;
+	this->dy += acceleration.getDDY() * time;
 
 }
 
@@ -40,7 +45,7 @@ void Velocity::add(const Acceleration& acceleration, double time)
  *********************************************/
 double Velocity::getSpeed() const
 {
-   return 9.9;
+	return sqrt(pow(getDX(), 2.0) + pow(getDY(), 2.0));
 }
 
 /*********************************************
@@ -58,7 +63,8 @@ double Velocity::getSpeed() const
  *********************************************/
 void Velocity::set(const Angle & angle, double magnitude)
 {
-
+	this->dx = magnitude * sin(angle.getRadians());
+	this->dy = magnitude * cos(angle.getRadians());
 }
 
 
